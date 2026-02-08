@@ -1,6 +1,7 @@
 const Author = require("../models/authorModel");
 const Book = require("../models/bookModel");
 const Sale = require("../models/saleModel");
+const Withdrawal = require("../models/withdrawalModel");
 
 exports.getAuthors = (req, res) => {
   Author.getAllAuthors((err, rows) => {
@@ -38,3 +39,8 @@ exports.getAuthorDetails = (req, res) => {
 exports.getAuthorSales = (req, res) => {
   Sale.getSalesByAuthor(req.params.id, (_, sales) => res.json(sales));
 };
+
+exports.getAuthorWithdrawals = (req, res) => {
+  Withdrawal.getWithdrawalsByAuthor(req.params.id, (_, rows) => res.json(rows));
+};
+

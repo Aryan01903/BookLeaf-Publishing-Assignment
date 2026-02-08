@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/test", (req, res) => {
-  res.send("Welcome to Author Royalty API");
+  res.send("API is working !!!");
 });
 
 app.use("/authors", authorRoutes);
